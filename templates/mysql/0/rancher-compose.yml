@@ -39,7 +39,8 @@
       description: "The password that will be set for the MySQL root superuser account."
       label: "MySQL Root Password"
       required: true
-      type: password
+      type: "password"
+      default: "mysql"
     - variable: "MYSQL_DATABASE"
       description: "Optional, allows you to specify the name of a database to be created on image startup."
       label: "MySQL Database Name"
