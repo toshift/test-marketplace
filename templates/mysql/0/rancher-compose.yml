@@ -40,7 +40,7 @@
       label: "MySQL Root Password"
       required: true
       type: "password"
-      default: "mysql"
+      default: "HghiiDGKJ5eo309dDAS4dad29394"
     - variable: "MYSQL_DATABASE"
       description: "Optional, allows you to specify the name of a database to be created on image startup."
       label: "MySQL Database Name"
@@ -55,7 +55,7 @@
       description: "A password for the additional MySQL (super)user. MySQL User must also be set."
       type: "password"
       label: "Mysql Password"
-      default: "mysql"
+      default: "udysfJEORAGJAOIERJGOFLJs34534323"
     - variable: "MYSQL_PORT"
       type: "integer"
       label: "MySQL Server Port"
