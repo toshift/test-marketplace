@@ -1,59 +1,27 @@
 .catalog:
   name: "mysql"
-  version: "v0.0.1"
+  version: "8.0"
   description: "MySQL"
   uuid: mysql-0
   questions:
     - variable: "MYSQL_DB"
       description: "Default database"
       label: "MySQL Database Name"
+      type: "string"
       required: true
-      default: 3306
-      type: "string"
-    - variable: mysql_user
-      description: "Creates an additional MySQL (super)user. MySQL Password must also be set."
-      label: "MySQL User"
-      type: "string"
       default: "mysql"
-    - variable: mysql_password
-      description: "A password for the additional MySQL (super)user. MySQL User must also be set."
-      label: "MySQL Password"
+    - variable: "MYSQL_USER"
       type: "string"
+      label: "Mysql user"
+      description: mysql
       default: "mysql"
-    - variable: mysql_image
-      description: "The docker image to use for the MySQL server."
-      label: "MySQL Docker Image"
-      type: "enum"
-      options:
-        - "mysql:latest"
-        - "mysql:8.0.1"
-        - "mysql:8.0"
-        - "mysql:8"
-        - "mysql:5.7.18"
-        - "mysql:5.7"
-        - "mysql:5"
-        - "mysql:5.6.36"
-        - "mysql:5.6"
-        - "mysql:5.5.56"
-        - "mysql:5.5"
-        - "mariadb:latest"
-        - "mariadb:10.3.0"
-        - "mariadb:10.3"
-        - "mariadb:10.2.6"
-        - "mariadb:10.2"
-        - "mariadb:10.1.24"
-        - "mariadb:10.1"
-        - "mariadb:10"
-        - "mariadb:10.0.31"
-        - "mariadb:10.0"
-        - "mariadb:5.5.56"
-        - "mariadb:5.5"
-        - "mariadb:5"
-      default: "mysql:latest"
-      required: true
+    - variable: "MYSQL_PASSWORD"
+      type: "string"
+      label: "Mysql password"
+      description: set superuser password for MySQL
+      default: "mysql"
     - variable: "MYSQL_PORT"
       type: "integer"
       label: "MySQL Server Port"
       description: "Public port for access to MySQL Server"
       default: "3306"
-
