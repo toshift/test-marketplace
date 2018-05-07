@@ -1,11 +1,12 @@
 mysql:
-  image: mysql:8.0
+  image: ${MYSQL_IMAGE}
   restart: always
   environment:
-    POSTGRES_DB: ${MYSQL_DB}
-    POSTGRES_USER: ${MYSQL_USER}
-    POSTGRES_PASSWORD: ${MYSQL_PASSWORD}
+    MYSQL_DATABASE: ${MYSQL_DATABASE}
+    MYSQL_USER: ${MYSQL_USER}
+    MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
   volumes:
-    - mysql-vol:/var/lib/mysql/data
+    - /var/lib/mysql
   ports:
     - ${MYSQL_PORT}:3306
