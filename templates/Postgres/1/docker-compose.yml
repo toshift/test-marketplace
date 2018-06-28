@@ -4,9 +4,10 @@ services:
   mysql:
     image: postgres:10.4
     ports:
-      - ${POSTGRES_PORT}:5432/tcp
+      - ${POSTGRES_PORT}:5532/tcp
     environment:
-      - POSTGRES_DATABASE=${POSTGRES_DATABASE}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_DB=${POSTGRES_DATABASE}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     restart: 'always'
