@@ -2,7 +2,7 @@ version: "2"
 
 services:
   mysql:
-    image: mysql:10.4
+    image: postgres:10.4
     ports:
       - ${POSTGRES_PORT}:5432/tcp
     environment:
