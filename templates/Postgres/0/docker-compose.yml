@@ -1,16 +1,13 @@
-version: "2"
+version: '2'
 services:
   postgres:
-    image: postgres:9.5
-    ports:
-      - 5432:5432/tcp
+    image: postgres:latest
     environment:
-      - POSTGRES_DB=${dbname}
-      - POSTGRES_USER=${dbuser}
-      - POSTGRES_PASSWORD=${dbpassword}
-    restart: 'no'
-  volumes:
-    - postgres-vol:/var/lib/postgresql/data
-volumes:
-  postgres-vol:
-    driver: local
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB: ${postgres_db}
+      POSTGRES_USER: ${postgres_user}
+      POSTGRES_PASSWORD: ${postgres_password}
+    tty: true
+    stdin_open: true
+    volumes_from:
+      - postgres-data
