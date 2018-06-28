@@ -9,9 +9,9 @@ services:
       - POSTGRES_DATABASE=${POSTGRES_DATABASE}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    restart: 'no'
+    restart: 'always'
     volumes:
-      - postgresdb-vol:/var/lib/postgres
+      - postgresdb-vol:/var/lib/postgresql/data
 
 volumes:
   postgresdb-vol:
