@@ -1,0 +1,35 @@
+.catalog:
+  name: Postgres
+  version: latest
+  uuid: postgresql-0
+  questions:
+  - variable: POSTGRES
+    description: 'POSTGRES exposed port'
+    label: 'Port:'
+    required: true
+    default: 5432
+    type: int
+  - variable: POSTGRES_DATABASE
+    description: 'POSTGRES database'
+    label: 'Database:'
+    required: true
+    default: sample
+    type: string
+  - variable: POSTGRES_USER
+    description: 'POSTGRES user'
+    label: 'User:'
+    required: true
+    default: user
+    type: string
+  - variable: POSTGRES_PASSWORD
+    description: 'POSTGRES password'
+    label: 'Password:'
+    required: true
+    default: loopedge-s3cr3t!
+    type: string
+  - variable: POSTGRES_ROOT_PASSWORD
+    description: 'POSTGRES root password'
+    label: 'POSTGRES password:'
+    required: true
+    default: loopedge-s3cr3t!
+    type: string
