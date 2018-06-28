@@ -4,7 +4,7 @@ services:
   postgres:
     image: postgres:10.4
     ports:
-      - ${POSTGRES_PORT}:5532/tcp
+      - ${POSTGRES_PORT}:5432/tcp
     environment:
       - PGDATA=/var/lib/postgresql/data/pgdata
       - POSTGRES_DB=${POSTGRES_DATABASE}
