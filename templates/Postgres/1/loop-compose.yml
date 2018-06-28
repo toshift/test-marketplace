@@ -19,17 +19,11 @@
     description: 'Postgres user'
     label: 'User:'
     required: true
-    default: user
+    default: sample
     type: string
   - variable: POSTGRES_PASSWORD
     description: 'Postgres password'
     label: 'Password:'
     required: true
     default: asdf1234
-    type: string
-  - variable: POSTGRES_ROOT_PASSWORD
-    description: 'Postgres root password'
-    label: 'Postgres root password:'
-    required: true
-    default: jigsawjigsaw
     type: string
