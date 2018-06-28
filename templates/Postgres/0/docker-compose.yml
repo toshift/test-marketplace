@@ -1,18 +1,16 @@
-# postgres ------------------------------------------
-postgres-data:
-  image: busybox
+version: "2"
+services:
+  postgres:
+    image: postgres:9.6.5
+    restart: always
+    environment:
+      - POSTGRES_DB=${dbname}
+      - POSTGRES_USER=${dbuser}
+      - POSTGRES_PASSWORD=${dbpassword}
+    ports:
+      - 5432:5432/tcp
   volumes:
-      - /var/lib/postgresql/data
-  container_name: postgres-datastore
-
-postgresql:
-  image: postgres
-  environment:
-    POSTGRES_USER: hoge
-    POSTGRES_PASSWORD: password
-  ports:
-    - "5432:5432"
-  container_name: postgres-db
-  volumes_from:
-      - postgres-data
-# ---------------------------------------------------
+    - postgres-vol:/var/lib/postgresql/data
+volumes:
+  postgres-vol:
+    driver: local
