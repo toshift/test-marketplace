@@ -1,0 +1,31 @@
+.catalog:
+  name: "PostgreSQL"
+  version: "10.1"
+  description: "PostgreSQL"
+  uuid: postgres-0
+  questions:
+    - variable: "POSTGRES_DB"
+      description: "Default database that is created when the image is first started."
+      label: "Postgres Database Name"
+      type: "string"
+      required: true
+      default: "postgres"
+    - variable: "POSTGRES_USER"
+      type: "string"
+      label: "Postgres user"
+      description: |
+        is used in conjunction with POSTGRES_PASSWORD to set a user and its password. 
+        This will create the specified user with superuser power and a database with the same name. 
+        If it is not specified, then the default user of postgres will be used.
+      default: "postgres"
+    - variable: "POSTGRES_PASSWORD"
+      type: "string"
+      label: "Postgres password"
+      description: |
+        sets the superuser password for PostgreSQL. The default superuser is defined by the <<Postgres user>> variable
+      default: "postgres"
+    - variable: "POSTGRES_PORT"
+      type: "integer"
+      label: "PostgreSQL Server Port"
+      description: "Public port for access to PostgreSQL Server"
+      default: "5432"
