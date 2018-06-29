@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - ${POSTGRES_PORT}:5432/tcp
+    restart: 'no'
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres-vol:/var/lib/postgresql/data
+
+volumes:
+  postgres-vol:
+    driver: local
